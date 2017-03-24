@@ -132,4 +132,13 @@ public class functions {
 		return (Y-X)%D==0?(Y-X)/D:((Y-X)/D)+1;
 	}
 	
+	//Find the missing element in a given permutation
+	static public int PermMissingElem(int A[])
+	{
+		
+		
+		
+		return 0;
+	}
+	
 }
