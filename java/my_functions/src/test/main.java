@@ -4,10 +4,12 @@ import my_functions.functions;
 public class main {
 	
 	public static void main(String[] args) { 
-		int input[]={9,3,9,3,9,7,9,8,7,66,66,8,55,4,4,6,6,55,22};
-		int output=0;
-		output=functions.OddOccurrencesInArray(input);
+		int input[]={1,2,3,4,5,6,7,8,9,0};
+		int [] output;
+		output=functions.CyclicRotation(input,6);
 	
-		System.out.println(output);
+		functions.printArr(input);
+		functions.printArr(output);
+		//System.out.println(output);
 	}
 }

@@ -71,6 +71,7 @@ public class functions {
 		{
 			System.out.print(A[i] +"  ");
 		}
+		System.out.println("");
 	}
 	
 	//find the Odd Occurrences In Array
@@ -97,5 +98,25 @@ public class functions {
 		return max;
 	}
 	
+	//shift right the array A K times 
+	static public int[] CyclicRotation(int[] A, int K)
+	{
+		int[] temp=new int[A.length];
+		int arrLeng=A.length;
+		K=K%arrLeng;
+		
+		for(int i=0;i<arrLeng;i++)
+		{
+			if((i+K)>(arrLeng-1))
+			{
+				temp[K-(arrLeng-i)]=A[i];
+			}
+			else
+			{
+				temp[i+K]=A[i];
+			}
+		}
+		return temp;
+	}
 	
 }
