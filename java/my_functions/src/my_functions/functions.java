@@ -136,9 +136,25 @@ public class functions {
 	static public int PermMissingElem(int A[])
 	{
 		
+		if (A.length==0)
+			return 1;
+		
+		if(A.length==1)
+			return A[0];
+			
+		
+		int sum=0;
+		int max=0;
+		
+		for(int i=0;i<A.length;i++)
+		{
+			if (max<A[i])
+				max=A[i];
+			sum+=A[i];
+		}
 		
 		
-		return 0;
+		return (max*(max+1)/2)-sum;
 	}
 	
 }
