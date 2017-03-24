@@ -101,8 +101,12 @@ public class functions {
 	//shift right the array A K times 
 	static public int[] CyclicRotation(int[] A, int K)
 	{
-		int[] temp=new int[A.length];
 		int arrLeng=A.length;
+		if(arrLeng==0 || arrLeng==1 || K==0)
+			return A; 
+				
+		int[] temp=new int[arrLeng];
+		
 		K=K%arrLeng;
 		
 		for(int i=0;i<arrLeng;i++)
@@ -117,6 +121,15 @@ public class functions {
 			}
 		}
 		return temp;
+	}
+	
+	//count minimal number of jumps from position X to Y.
+	static public int FrogJmp(int X, int Y, int D)
+	{
+		if (X==Y)
+			return 0;
+		
+		return (Y-X)%D==0?(Y-X)/D:((Y-X)/D)+1;
 	}
 	
 }
