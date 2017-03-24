@@ -1,5 +1,7 @@
 package my_functions;
 
+import java.util.*;
+
 public class functions {
 
 	// transfer integer to binary string
@@ -25,6 +27,9 @@ public class functions {
 		return binary;
 	}
 	
+	// find out the Longest Binary Gap
+	// Dependency
+	// int2Binary
 	static public int BinaryGap(int n)
 	{
 		String b_string=int2Binary(n);
@@ -59,4 +64,38 @@ public class functions {
 		}
 		return max;
 	}
+	
+	static public void printArr(int [] A)
+	{
+		for(int i=0;i<A.length;i++)
+		{
+			System.out.print(A[i] +"  ");
+		}
+	}
+	
+	//find the Odd Occurrences In Array
+	static public int OddOccurrencesInArray(int [] A)
+	{
+		Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+		int max=0;
+		
+		for(int i=0;i<A.length;i++)
+		{
+
+			if(map.get(A[i])==null)
+			{
+				map.put(A[i], A[i]);
+				max=max+A[i];
+			}
+			else
+			{
+				map.put(A[i], null);
+				max=max-A[i];
+			}
+		}
+		
+		return max;
+	}
+	
+	
 }
