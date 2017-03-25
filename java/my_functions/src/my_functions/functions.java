@@ -2,6 +2,7 @@ package my_functions;
 
 import java.util.*;
 
+
 public class functions {
 
 	// transfer integer to binary string
@@ -155,6 +156,24 @@ public class functions {
 		
 		
 		return (max*(max+1)/2)-sum;
+	}
+	
+	static public int TapeEquilibrium(int[] A)
+	{
+		int sum1=0;
+		int sum2=Arrays.stream(A).sum();
+		int minDiff=Integer.MAX_VALUE;
+		
+		for (int i=0;i<A.length;i++)
+		{
+			int diff=0;
+			sum1+=A[i];
+			sum2-=A[i];
+			
+			diff=Math.abs(sum1-sum2);
+			minDiff=Math.min(diff, minDiff);
+		}
+		return minDiff;
 	}
 	
 }
