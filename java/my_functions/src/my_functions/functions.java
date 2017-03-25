@@ -1,6 +1,7 @@
 package my_functions;
 
 import java.util.*;
+import java.util.function.IntUnaryOperator;
 
 
 public class functions {
@@ -250,4 +251,35 @@ public class functions {
 		
 		
 	}
+
+	//Calculate the values of counters after applying all alternating operations: increase counter by 1; set value of all counters to current maximum.
+	static public int[] MaxCounters(int N, int[] A)
+	{
+		int [] temp=new int[N];
+		int max=0;
+		for (int i=0;i<A.length;i++)
+		{
+			if(1<=A[i] && A[i]<=N)
+			{
+				temp[A[i]-1]++;
+				if(max<temp[A[i]-1])
+					max=temp[A[i]-1];
+			}
+			else 
+			{
+				
+				Arrays.fill(temp, max);
+				/*for(int s=0;s<N;s++)
+				{
+					temp[s]=max;					
+				}*/
+			}
+		}
+		return temp;
+	}
+
+
+
+
+
 }
