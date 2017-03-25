@@ -158,6 +158,7 @@ public class functions {
 		return (max*(max+1)/2)-sum;
 	}
 	
+	//Minimize the value |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|
 	static public int TapeEquilibrium(int[] A)
 	{
 		int sum1=0;
@@ -175,5 +176,28 @@ public class functions {
 		}
 		return minDiff;
 	}
+	
+	//Check whether array A is a permutation
+	static public int PermCheck(int[] A)
+	{
+		int[] counter = new int [A.length];
+		 
+        for(int i= 0; i< A.length; i++){
+            if (A[i] < 1 || A[i] > A.length) {
+                // Out of range
+                return 0;
+            }
+            else if(counter[A[i]-1] == 1) {
+                // met before
+                return 0;
+            }
+            else {
+                // first time meet
+                counter[A[i]-1] = 1;
+            }
+        }
+        return 1;
+	}
+	
 	
 }
