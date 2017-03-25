@@ -4,9 +4,9 @@ import my_functions.functions;
 public class main {
 	
 	public static void main(String[] args) { 
-		int input[]={3,4,4,6,1,4,4};
+		int input[]={0,1,0,1,1};
 		int output;
-		output=functions.CountDiv(100,1000,17);
+		output=functions.PassingCars(input);
 	
 		//functions.printArr(output);
 		System.out.println(output);

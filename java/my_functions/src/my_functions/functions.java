@@ -284,6 +284,29 @@ public class functions {
 		return (max-min)+1;
 	}
 
+	//Count the number of passing cars on the road.
+	static public int PassingCars(int[] A)
+	{
+		int count=0; //to east
+		int passing=0;
+		
+		for(int i=0;i<A.length;i++)
+		{
+			if(A[i]==1)
+			{
+				//ask how many 0 have you saw before [i]
+				passing+=count;
+				if(passing > 1e9) return -1;
+			}
+			else
+			{
+				//to east +1
+				count++;
+			}
+		}
+		 return passing;
+	}
+	
 
 
 }
