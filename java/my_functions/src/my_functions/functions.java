@@ -199,5 +199,26 @@ public class functions {
         return 1;
 	}
 	
+	//Fine the earliest time when a frog can jump to the other side of a river
+	static public int FrogRiverOne(int X, int[] A)
+	{
+		int [] temp=new int[X];
+		
+		for (int i=0;i<A.length;i++)
+		{
+			if(temp[A[i]-1]!=A[i])
+			{
+				temp[A[i]-1]=A[i];
+				X--;
+			}
+			
+			if (X==0)
+				return i;
+		}
+		return -1;
+		
+		
+		
+	}
 	
 }
