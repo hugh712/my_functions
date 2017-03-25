@@ -267,18 +267,22 @@ public class functions {
 			}
 			else 
 			{
-				
 				Arrays.fill(temp, max);
-				/*for(int s=0;s<N;s++)
-				{
-					temp[s]=max;					
-				}*/
 			}
 		}
 		return temp;
 	}
 
-
+	//Compute number of integers divisible by k in range [a..b].
+	static public int CountDiv(int A, int B, int K)
+	{
+		int min=0, max=0;
+		
+		min=(int)Math.ceil((double)A/(double)K);
+		max=(int)Math.floor(B/K);
+		
+		return (max-min)+1;
+	}
 
 
 
