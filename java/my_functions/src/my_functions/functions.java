@@ -321,5 +321,25 @@ public class functions {
 		return A.length-dup;
 	}
 
+	static public int MaxProductOfThree(int[] A)
+	{
+		Arrays.sort(A);
+		
+		if(A.length==3)
+			return A[0]*A[1]*A[2];
+		
+		if(A[A.length-1]<0)
+		{
+			return A[A.length-1]*A[A.length-2]*A[A.length-3];
+		}
+		else if (A[0]*A[1]*A[A.length-1]>A[A.length-1]*A[A.length-2]*A[A.length-3])
+		{
+			return A[0]*A[1]*A[A.length-1];
+		}
+		else
+		{
+			return A[A.length-1]*A[A.length-2]*A[A.length-3];
+		}
+	}
 
 }

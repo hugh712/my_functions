@@ -5,9 +5,9 @@ import my_functions.functions;
 public class main {
 	
 	public static void main(String[] args) { 
-		int input[]={2,1,1,2,3,1};
+		int input[]={-3,1,2,-2,5,6};
 		int output;
-		output=functions.Distinct(input);
+		output=functions.MaxProductOfThree(input);
 	
 		//functions.printArr(output);
 		System.out.println(output);
