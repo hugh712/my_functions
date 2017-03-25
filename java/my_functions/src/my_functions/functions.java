@@ -307,6 +307,19 @@ public class functions {
 		 return passing;
 	}
 	
+	// Compute number of distinct values in an array.
+	static public int Distinct(int[] A)
+	{
+		Arrays.sort(A);
+		int dup=0;
+		
+		for(int i=1;i<A.length;i++)
+		{
+			if(A[i]==A[i-1])
+				dup++;
+		}
+		return A.length-dup;
+	}
 
 
 }
