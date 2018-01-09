@@ -27,30 +27,22 @@ int main(void)
 }
 struct ListNode* deleteDuplicates(struct ListNode* head)
 {
-	int lastvalue=0;
-	struct ListNode *curr;
-	struct ListNode *L2;
-	struct ListNode *L2_origin;
-	
-	if (head==NULL)
-		return NULL;
-
-	curr=head;
- 	visitNodes(curr);	
-	L2=(struct ListNode*)malloc(sizeof(struct ListNode));
-	L2_origin=L2;
-	L2->val=curr->val;
-	lastvalue=curr->val;		
-	while(curr->next!=NULL){
-		curr=curr->next;
-		if (curr->val!=lastvalue){
-			L2->next=(struct ListNode*)malloc(sizeof(struct ListNode));
-			L2=L2->next;
-			L2->val=curr->val;
+	if(head)
+	{
+		struct ListNode* p=head;
+		while(p->next)
+		{
+			if(p->val!=p->next->val){
+				p=p->next;	
+			}
+			else{
+				struct ListNode* temp=p->next;
+				p->next=p->next->next;
+				free(temp);
+			}
 		}	
-		lastvalue=curr->val;
-	}	
-	return L2_origin;	
+	}
+	return head;	
 }
 void freeNodes(struct ListNode* node){
   //free from second node
