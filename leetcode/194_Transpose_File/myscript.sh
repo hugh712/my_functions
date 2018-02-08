@@ -6,7 +6,9 @@ awk '
         if(NR == 1) {
             s[i] = $i;
         } else {
+					  print s[i]; 
             s[i] = s[i] " " $i;
+					  print s[i]; 
         }
     }
 }

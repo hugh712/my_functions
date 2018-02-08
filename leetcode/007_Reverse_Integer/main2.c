@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 int reverse(int x);
 int main(void)
@@ -25,7 +26,7 @@ int reverse(int x)
 		digi=x%10;
 		x=x/10;
 
-		if(output > 214748364){
+		if(output > INT_MAX/10){
         return 0;
     }
 
