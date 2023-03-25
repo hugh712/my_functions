@@ -5,13 +5,16 @@
 #include <limits.h>
 
 bool isPalindrome(int x);
+bool isPalindrome_2(int x);
 int getCounts(int x);
 int getDigit(int num, int which);
 int main(int argc, const char *argv[])
 {
-	int input=-2147447412;
+  //int input=-2147447412;
+	//int input=121;
+	int input=0;
 	bool ret=0;
-	ret=isPalindrome(input);
+	ret=isPalindrome_2(input);
 	printf("ret=%d\n", ret);
 	
 }
@@ -71,4 +74,20 @@ bool isPalindrome(int x) {
 
 	    
 	return 1;
+}
+
+bool isPalindrome_2(int x) {
+	if (x < 0 || (x!=0 && x%10 == 0))
+		return false;
+	
+	int first_half=0;
+
+
+	while (first_half < x)
+	{
+		first_half = (first_half * 10) + (x % 10);	
+		x/=10;
+	}
+	
+	return (first_half == x) || (first_half/10 == x);
 }
