@@ -9,7 +9,7 @@ typedef struct{
 
 int hash(int key, int numsSize){
 	int SIZE = numsSize;
-	int r = abs(key) % SIZE;
+	int r = (abs(key) * 17) % SIZE;
 	return r;
 }
 
