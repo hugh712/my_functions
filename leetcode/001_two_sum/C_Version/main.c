@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 int* twoSum(int* nums, int numsSize, int target);
+int* twoSum_2(int* nums, int numsSize, int target, int* returnSize);
 
 int main(void)
 {
@@ -60,4 +61,24 @@ for (;i<numsSize/4;i++)
 }//end of for
 
 return result;
+}
+
+int* twoSum_2(int* nums, int numsSize, int target, int* returnSize){
+    int* answer = (int*)malloc(sizeof(int)*2);
+
+    for (int i=0; i<numsSize; i++)
+    {
+        for (int j=i+1; j<numsSize; j++)
+        {
+            if (nums[i]+nums[j] == target)
+            {
+                answer[0] = i;
+                answer[1] = j;
+                *returnSize = sizeof(answer)/sizeof(int);
+                break;
+            }
+        }
+    }
+
+    return answer;
 }
