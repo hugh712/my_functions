@@ -13,6 +13,7 @@
 
 
 int romanToInt(char* s);
+int romanToInt2(char* s);
 int* charToIntArr(char* s);
 
 int main(int argc, const char *argv[])
@@ -22,13 +23,38 @@ int main(int argc, const char *argv[])
 	//char *roman1="MMCCCXCIX";
 	//char *roman1="MMMCMXCIX";
 	int result=0;
-	result=romanToInt(roman1);
+	result=romanToInt2(roman1);
 
 	printf("\nthe result = %d\n", result);
 
 	return 0;
 }
 
+int char2int(char* ch)
+{
+	switch (*ch)
+	{
+		case 'I': return (*(ch+1)=='X' || *(ch+1)=='V') ? -1 : 1;
+		case 'X': return (*(ch+1)=='L' || *(ch+1)=='C') ? -10 : 10;
+		case 'C': return (*(ch+1)=='D' || *(ch+1)=='M') ? -100 : 100;
+		case 'V': return 5;
+		case 'L': return 50;
+		case 'D': return 500;
+		case 'M': return 1000;	
+	}
+	return 0;
+
+}
+int romanToInt2(char* s) 
+{
+	int value=0;
+	for (;*s!='\0';s++)
+		value+=char2int(s);
+
+	return value;
+
+
+}
 int romanToInt(char* s) 
 {
 	int * romanArr=NULL;
